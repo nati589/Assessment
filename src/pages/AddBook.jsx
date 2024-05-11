@@ -23,7 +23,7 @@ const AddBook = () => {
     axios
       .post("http://localhost:5173/books", data)
       .then(() => {
-        // setLoading(false);
+        //  setLoading(false);
         enqueueSnackbar("Book Created successfully", { variant: "success" });
         navigate("/");
       })
@@ -78,7 +78,6 @@ const AddBook = () => {
           Save
         </button>
       </div>
-      export default CreateBooks
     </div>
   );
 };
