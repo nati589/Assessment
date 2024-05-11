@@ -39,7 +39,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5173/books/${id}`, data)
+      .put(`https://book-ecv6.onrender.com/v1/book/updateBook/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book Edited successfully", { variant: "success" });

@@ -12,7 +12,7 @@ const ListingPage = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5173/")
+      .get("https://book-ecv6.onrender.com/v1/book/getAll")
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
