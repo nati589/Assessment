@@ -8,7 +8,9 @@ import UpdateBook from "./pages/UpdateBook";
 const App = () => {
   return (
     <Routes>
+      {/* <Route path="/" element={<Home />} /> */}
       <Route path="/" element={<ListingPage />} />
+
       <Route path="/books/create" element={<AddBook />} />
 
       <Route path="/books/edit/:id" element={<UpdateBook />} />

@@ -24,6 +24,7 @@ const AddBook = () => {
       .post("https://book-ecv6.onrender.com/v1/book/createBook", data)
       .then(() => {
         //  setLoading(false);
+        console.log("working");
         enqueueSnackbar("Book Created successfully", { variant: "success" });
         navigate("/");
       })
@@ -32,6 +33,7 @@ const AddBook = () => {
         // alert('An error happened. Please Chack console');
         enqueueSnackbar("Error", { variant: "error" });
         console.log(error);
+        navigate("/");
       });
   };
 

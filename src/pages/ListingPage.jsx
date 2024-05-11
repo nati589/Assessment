@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "../components/Spinner";
-
 import { Link } from "react-router-dom";
 import { MdOutlineAddBox } from "react-icons/md";
 
 const ListingPage = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+  //   const handleUpdate = (){
+
+  //   }
 
   useEffect(() => {
     setLoading(true);
     axios
       .get("https://book-ecv6.onrender.com/v1/book/getAll")
-      .then((response) => {
-        setBooks(response.data.data);
+      .then((res) => {
+        // Sort books by publish year before setting state
+        // const sortedBooks = res.data.sort(
+        //   (a, b) => a.PublishYear - b.PublishYear
+        // );
+        setBooks(res.data);
         setLoading(false);
         console.log("it is working");
       })
@@ -42,6 +48,7 @@ const ListingPage = () => {
               <p>{book.description}</p>
               <p>{book.price}</p>
               <p>{book.PublishYear}</p>
+              {/* <button onClick={handleUpdate()}>Update</button> */}
             </div>
           ))}
         </div>
